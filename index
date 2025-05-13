@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refined Sectional Spring IPPT Calculator</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#007bff">
+</head>
+<body>
+    <h1>Refined Sectional Spring IPPT Calculator</h1>
+    <div>
+        <div class="form-group">
+            <label for="doorHeight">Enter Door Height (mm):</label>
+            <input type="number" id="doorHeight" placeholder="Enter door height (e.g., 2200)">
+        </div>
+        <div class="form-group">
+            <label for="doorWeight">Enter Door Weight (kg):</label>
+            <input type="number" id="doorWeight" placeholder="Enter door weight (e.g., 100)">
+        </div>
+        <div class="form-group">
+            <label for="maxSprings">Select Maximum Number of Springs:</label>
+            <select id="maxSprings">
+                <option value="1">Single</option>
+                <option value="2">Double</option>
+                <option value="3">Triple</option>
+                <option value="4" selected>Quad</option>
+            </select>
+        </div>
+        <button id="calculateBtn">Calculate</button>
+    </div>
+
+    <div class="results" id="results">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Register the Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker registered successfully.'))
+                .catch(err => console.error('Service Worker registration failed:', err));
+        }
+    </script>
+</body>
+</html>
